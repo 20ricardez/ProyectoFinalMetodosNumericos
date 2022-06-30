@@ -1,0 +1,31 @@
+import numpy as np
+print("Descomposicion LU")
+m=int(input("Introduce el número de reglones: "))
+matriz=np.zeros([m,m])
+u=np.zeros([m,m])
+l=np.zeros([m,m])
+print("Introducciendo elementos a la matriz")
+ #ingresamos datos
+for r in range(0,m):
+    for c in range(0,m):
+        matriz[r,c]=(input("Elemento a["+str(r+1)+","+str(c+1)+"]  "))
+        matriz[r,c]=float(matriz[r,c])
+        u[r,c]=matriz[r,c]
+#realizamos la factorizacion lu
+#operaciones para hacer 0 debajos de la diagonal
+for k in range(0,m):
+    for r in range (0,m): 
+        if(k==r):
+           l[k,r]=1
+        if(k<r):
+           factor=(matriz[r,k]/matriz[k,k])
+           l[r,k]=factor
+           for c in range(0,m):
+               matriz[r,c]=matriz[r,c]-(factor*matriz[k,c])
+               u[r,c]=matriz[r,c]
+
+print("Impresión de resultados ")
+print("Matriz L")
+print(l)
+print("Matriz U")
+print(u)

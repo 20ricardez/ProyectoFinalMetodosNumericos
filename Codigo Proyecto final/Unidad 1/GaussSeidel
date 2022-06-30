@@ -1,0 +1,47 @@
+import numpy 
+m=int(input("Valor de m: ")) #numero de filas 
+n=int(input("Valor de n: ")) #numero de columnas
+matrix = numpy.zeros((m,n))
+x=numpy.zeros((m))
+
+vector=numpy.zeros((n))
+
+comp=numpy.zeros((m))
+error=[]
+
+#ingresando valores a la matriz
+print("Metodo de Gauus Seidel")
+print("Introduce los valores de la matriz y del vector solucion")
+for r in range(0,m):
+    for c in range(0,n):
+        matrix[(r),(c)]=float(input("Elemento a["+str(r+1)+str(c+1)+"] "))
+    vector[(r)]=float(input('b['+str(r+1)+']: '))
+tol=float(input("Cual es la tolerancia que desea: "))
+itera=int(input("Cual es el numero máximo de interaciones: "))
+
+k=0
+#agregar
+while k<itera:
+    suma=0
+    k=k+1
+    for r in range(0,m):
+        suma=0
+        for c in range(0,n):
+            if (c != r):
+                suma=suma+matrix[r,c]*x[c]
+        x[r]=(vector[r]-suma)/matrix[r,r]
+        print("x["+str(r)+"]: "+str(x[r]))
+    del error[:]
+#comprobacion
+    for r in range(0,m):
+        suma=0
+        for c in range(0,n):
+            suma=suma+matrix[r,c]*x[c]
+        comp[r]=suma
+        dif=abs(comp[r]-vector[r])
+        error.append(dif)
+        print("Error en x[",r,"]= ",error[r])
+    print("Interaciones ",r)
+    if all(i<=tol for i in error) == True:
+        break
+print("Programa terminado")

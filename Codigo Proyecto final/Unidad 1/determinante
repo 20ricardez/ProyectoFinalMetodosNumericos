@@ -1,0 +1,22 @@
+#ingresando los datos a la matriz
+a,b,c,d,e,f = input("Ingrese los coeficientes: ").split(',')
+a=int (a)
+b=int(b)
+c=int(c)
+d=int(d)
+e=int(e)
+f=int(f) 
+print("{}X+{}Y={}".format(a,b,c))
+print("{}X+{}Y={}".format(d,e,f))
+#obteniendo la determinante de la matriz
+delta=a*e-b*d
+#obteniendo el determinante de x
+deltaX=e*c-b*f
+#obteniendo el determinante de y
+deltaY=a*f-c*d
+#obtenemos lo valores de la x dividiendo entre el determinante de la matriz
+X=deltaX/delta
+Y=deltaY/delta
+
+print ("El valor de X es: ",X)
+print("El valor de Y es: ",Y)
