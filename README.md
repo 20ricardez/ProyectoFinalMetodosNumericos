@@ -1,11 +1,11 @@
 # ProyectoFinalMetodosNumericos
 Con motivo de de fin de curso de la materia de Métodos Numéricos para ingenieras, hemos realizado una compilación de métodos, los cuales fueron vistos durante la duración del semestre, e implementados en programas con lenguaje Python.
 
-                                          INSTITUTO TECNOLÓGICO DEL ESTADO DE OAXACA  
-                                          
-                                         Ingeneria En Sistemas Computacionales
+INSTITUTO TECNOLOGICO DEL ESTADO DE OAXACA
+
+INGENERIA EN SISTEMAS COMPUTACIONALES
                                          
- MÉTODOS NUMÉRICOS
+MÉTODOS NUMÉRICOS
  
 GRUPO 4SC
 
